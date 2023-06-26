@@ -2,14 +2,12 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className=" bg-gray-600 ">
+    <footer className=" bg-gray-400">
       <div className="container ">
         <div className="grid grid-cols-1 py-7 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="col-span-1">
             <div className="text-center text-dmode-olive font-semibold">
-              <h2 className="text-3xl pb-5 dark:text-dmode-lightolive">
-                Services
-              </h2>
+              <h2 className="text-3xl pb-5 text-cyan-600">Services</h2>
               <a href="faq.html">
                 <h3 className=" border-b-2 dark:border-dmode-lightolive py-3 dark:text-color-white">
                   FAQs
@@ -29,9 +27,7 @@ export const Footer = () => {
           </div>
           <div className="col-span-1">
             <div className="text-center tex t-dmode-olive font-semibold">
-              <h2 className="text-3xl pb-5 dark:text-dmode-lightolive">
-                Contact Details
-              </h2>
+              <h2 className="text-3xl pb-5 text-cyan-600">Contact Details</h2>
               <h3 className=" border-b-2 dark:border-dmode-lightolive py-3 dark:text-color-white">
                 Phone Number: (+63) 988 123 4567
               </h3>
@@ -48,9 +44,7 @@ export const Footer = () => {
           </div>
           <div className="col-span-1">
             <div className="text-center text-dmode-olive font-semibold">
-              <h2 className="text-3xl text- pb-5 dark:text-dmode-lightolive">
-                Legal
-              </h2>
+              <h2 className="text-3xl text- pb-5 text-cyan-600">Legal</h2>
               <a href="privacy.html">
                 <p className=" border-b-2 dark:border-dmode-lightolive py-3 dark:text-color-white">
                   Privacy Policy
@@ -69,15 +63,15 @@ export const Footer = () => {
             </div>
           </div>
           <div className="col-span-1">
-            <div className="text-center text-dmode-olive font-semibold">
-              <h2 className="text-3xl pb-5">Didn't Join Yet?</h2>
+            <div className="text-center font-semibold">
+              <h2 className="text-3xl pb-5 text-cyan-600">Didn't Join Yet?</h2>
               <p className="  py-3 dark:text-color-white">
                 Let's have a a smooth ride with CarGo rent a Car!
               </p>
               <div className="pt-10">
                 <a
                   href="contact.html"
-                  className="py-3 px-3 bg-color-red-400 rounded-lg border border-color-primary hover:text-color-white dark:bg-color-primary dark:text-color-white"
+                  className="py-3 px-3 bg-red-600 rounded-lg border-none text-white hover:text-cyan-600"
                 >
                   Join Our Community
                 </a>
@@ -87,14 +81,13 @@ export const Footer = () => {
         </div>
       </div>
       <hr />
-      
-        <div className="text-center text-lg py-5">
-          <p>
-            Copyright © 2023 | CarGo Rent a Car | Develop by Team MEND | Kodego
-            BootCamp Tropang CharAt64 | All Rights Reserved
-          </p>
-        </div>
-      
+
+      <div className="text-center text-lg py-5">
+        <p>
+          Copyright © 2023 | CarGo Rent a Car | Develop by Team MEND | Kodego
+          BootCamp Tropang CharAt64 | All Rights Reserved
+        </p>
+      </div>
     </footer>
   );
 };
