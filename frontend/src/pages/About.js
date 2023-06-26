@@ -1,47 +1,61 @@
-import React, { useState } from "react";
-import { FiMoon, FiSun } from "react-icons/fi";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const About = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [firstName, setFirstName] = useState('');
+  const [formErrors, setFormErrors] = useState({});
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const validateForm = () => {
+    const errors = {};
+
+    if (!firstName.trim()) {
+      errors.firstName = 'First Name is required';
+    }
+
+    // Add validation rules for other fields...
+
+    setFormErrors(errors);
+
+    // Return true if the form is valid (no errors)
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (validateForm()) {
+      // Submit the form
+      console.log('Form submitted!');
+    }
   };
 
   return (
-    <div className="py-40">
-      <nav
-        className={`flex items-center justify-between p-4 ${
-          darkMode ? "bg-gray-900 text-white" : "bg-gray-200 text-gray-800"
-        }`}
-      >
-        <div className="font-bold text-xl">Logo</div>
-        <ul className="flex gap-4">
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-        <div className="flex items-center">
-          <label
-            htmlFor="darkModeToggle"
-            className="flex items-center cursor-pointer"
-          >
-            <span className="mr-2">Dark Mode</span>
-            {darkMode ? (
-              <FiMoon className="w-5 h-5 text-indigo-600" />
-            ) : (
-              <FiSun className="w-5 h-5 text-indigo-600" />
-            )}
-            <input
-              type="checkbox"
-              id="darkModeToggle"
-              checked={darkMode}
-              onChange={toggleDarkMode}
-              className="hidden"
-            />
-          </label>
-        </div>
-      </nav>
+    <div className='py-40'>
+      <label htmlFor="firstName">First Name:</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        value={firstName}
+        onChange={handleFirstNameChange}
+        className="border rounded-lg p-2 w-full"
+      />
+      {formErrors.firstName && (
+        <p className="text-red-500">{formErrors.firstName}</p>
+      )}
+
+      <NavLink to="/finaldetails">
+        <button
+          className="py-1 px-10 bg-button text-white rounded-lg"
+          onClick={handleSubmit}
+        >
+          Continue
+        </button>
+      </NavLink>
     </div>
   );
 };

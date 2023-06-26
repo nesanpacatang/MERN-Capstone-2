@@ -1,6 +1,6 @@
 // Components
 
-import { Header, Footer } from "./components";
+import { Header, Footer } from "./components/";
 import { AllRoutes } from "./routes/AllRoutes";
 import "./index.css";
 

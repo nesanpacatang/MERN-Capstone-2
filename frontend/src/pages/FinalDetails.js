@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export const FinalDetails = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleCheckboxChange = (event) => {
@@ -11,12 +12,15 @@ export const FinalDetails = () => {
 
   const handleConfirmClick = () => {
     if (!isChecked) {
-      alert("Please accept the Terms of Service before confirming.");
+      setShowModal(true);
     } else {
-      
       console.log("Booking confirmed!");
       navigate("/bookingconfirm"); // Redirect to the desired page
     }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -31,6 +35,7 @@ export const FinalDetails = () => {
               <h2 className="text-primary text-xl font-bold pb-4">Booking Details</h2>
             </div>
             <div className="bg-light flex flex-col justify-center px-10">
+              {/* Your booking details */}
               <h2 className="text-center pt-3 pb-5 text-primary text-xl font-bold">ID# LABC123</h2>
               <div className="flex flex-col sm:flex-row justify-between font-bold">
                 <p>Name: Drei Loreto</p>
@@ -54,6 +59,8 @@ export const FinalDetails = () => {
               </div>
               <h2 className="py-5 text-center text-primary font-bold text-2xl">Total Rent Price</h2>
               <h2 className="py-5 text-center text-primary font-bold text-2xl">Php 45,500</h2>
+              {/* End of booking details */}
+
               <div className="flex justify-center sm:x items-center">
                 <input
                   type="checkbox"
@@ -78,6 +85,22 @@ export const FinalDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-red-500 max-w-xs mx-auto rounded-lg p-8">
+            <h2 className="text-white text-2xl font-bold mb-4">Error</h2>
+            <p className="text-white">Please accept the Terms of Service before confirming.</p>
+            <button
+              className="bg-white text-red-500 px-4 py-2 rounded-lg mt-4 font-semibold"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

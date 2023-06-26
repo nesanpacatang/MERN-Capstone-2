@@ -118,7 +118,7 @@ export const Home = () => {
         <div className="flex justify-center items-center rounded-lg bg-white py-2">
           <div className="relative">
             <select className="rounded-lg pl-8 focus:ring-0 border-none" id="carType" name="carType">
-              <option disabled selected value="">Car Type</option>
+              <option disabled value="">Car Type</option>
               <option value="Compact">Compact</option>
               <option value="SUV">SUV</option>
               <option value="Sedan">Sedan</option>

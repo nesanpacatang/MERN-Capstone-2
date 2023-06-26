@@ -8,12 +8,16 @@ export const Driver = () => {
   const [hireDriver, setHireDriver] = useState(false);
 
   const handleSelfDriveChange = () => {
-    setSelfDrive(!selfDrive);
+    setSelfDrive(true);
+    setHireDriver(false);
   };
-
+  
   const handleHireDriverChange = () => {
-    setHireDriver(!hireDriver);
+    setHireDriver(true);
+    setSelfDrive(false);
   };
+  
+  
 
   // Information
   const [firstName, setFirstName] = useState('');
@@ -26,8 +30,6 @@ export const Driver = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [driverLicenseNumber, setDriverLicenseNumber] = useState('');
-  
-
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -60,6 +62,7 @@ export const Driver = () => {
   const handlePhoneNumberChange = (event) => {
     setPhoneNumber(event.target.value);
   };
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -159,354 +162,181 @@ export const Driver = () => {
             </div>
           </form>
         </div>
-
         <div className="container __grid">
-          <div className='bg-light px-8 rounded-2xl'>
-            <form action="" >
-              <div>
-                <h2 className='text-primary text-2xl font-bold pb-5 pt-8'>Driving Preference</h2>
-                <p className='font-bold pb-3'>Choose from the options below:</p>
+          <div className="bg-light px-8 rounded-2xl">
+          <form action="">
+            <div>
+              <h2 className="text-primary text-2xl font-bold pb-5 pt-8">Driving Preference</h2>
+              <p className="font-bold pb-3">Choose from the options below:</p>
+            </div>
+
+            <div>
+            <div className="pl-5 pb-4">
+              <input
+                type="checkbox"
+                id="selfDriveCheckbox"
+                checked={selfDrive}
+                onChange={handleSelfDriveChange}
+                className='mr-5'
+            
+              />
+              <label htmlFor="selfDriveCheckbox">
+                Self Drive
+              </label>
+            </div>
+
+
+              <div className="pl-5 pb-4">
+                  <input
+                    type="checkbox"
+                    id='hireDriverCheckbox'
+                    checked={hireDriver}
+                    onChange={handleHireDriverChange}
+                    className='mr-5'
+                  />
+                <label htmlFor='hireDriverCheckbox'>
+                Hire a Driver
+                </label>
               </div>
+            </div>
 
+            {hireDriver && (
               <div>
-                <div className='flex pl-5 pb-4'>
-                  <label>
+                <h2 className="text-primary text-2xl pb-4 font-bold">Information</h2>
+                <h3 className="font-bold text-2xl pb-4">Main Driver</h3>
+                <div className="px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                  <div>
+                    <label htmlFor="firstName">First Name:</label>
                     <input
-                      type="checkbox"
-                      checked={selfDrive}
-                      onChange={handleSelfDriveChange}
-                      
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={firstName}
+                      onChange={handleFirstNameChange}
+                      className="border rounded-lg p-2 w-full"
                     />
-                  
-                  </label>
-                  <p className='pl-4'>Self Drive</p>
+                  </div>
+                  <div>
+                    <label htmlFor="middleName">Middle Name:</label>
+                    <input
+                      type="text"
+                      id="middleName"
+                      name="middleName"
+                      value={middleName}
+                      onChange={handleMiddleNameChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName">Last Name:</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={lastName}
+                      onChange={handleLastNameChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="suffix">Suffix:</label>
+                    <input
+                      type="text"
+                      id="suffix"
+                      name="suffix"
+                      value={suffix}
+                      onChange={handleSuffixChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="birthdate">Birthdate:</label>
+                    <input
+                      type="date"
+                      id="birthdate"
+                      name="birthdate"
+                      value={birthdate}
+                      onChange={handleBirthdateChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="age">Age:</label>
+                    <input
+                      type="number"
+                      id="age"
+                      name="age"
+                      value={age}
+                      onChange={handleAgeChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="nationality">Nationality:</label>
+                    <input
+                      type="text"
+                      id="nationality"
+                      name="nationality"
+                      value={nationality}
+                      onChange={handleNationalityChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phoneNumber">Phone Number:</label>
+                    <input
+                      type="text"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      value={phoneNumber}
+                      onChange={handlePhoneNumberChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email">Email:</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={email}
+                      onChange={handleEmailChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="driverLicenseNumber">Driver License Number:</label>
+                    <input
+                      type="text"
+                      id="driverLicenseNumber"
+                      name="driverLicenseNumber"
+                      value={driverLicenseNumber}
+                      onChange={handleDriverLicenseNumberChange}
+                      className="border rounded-lg p-2 w-full"
+                    />
+                  </div>
                 </div>
+                
 
-                <div className='flex pl-5 pb-4'>
-                  <label>
-                    <input
-                      type="checkbox"
-                      checked={hireDriver}
-                      onChange={handleHireDriverChange}
-                    />
-                  </label>
-                  <p className='pl-4'>Hire a Driver</p>
-                </div>
+                <div className='pb-10'> {/* Start Upload FIle */}
+              <div>
+                <h2 className='pt-5 font-bold text-lg'>Upload Driver's License ID Photo</h2>
               </div>
-
-              <div>
-                  <h2 className='text-primary text-2xl pb-4 font-bold'>Information</h2>
-                  <h3 className='font-bold text-2xl pb-4'>Main Driver</h3>
-                  <div className="px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 ">
-
-                      <div className="flex flex-col justify-center">
-                          <label htmlFor="" className='font-bold text-lg'>Full Name</label>
-                          <input
-                          type="text"
-                          value={firstName}
-                          onChange={handleFirstNameChange}
-                          />
-                          <label className="flex">First Name</label>
+              <div className='border border-primary'>
+                <div className='flex flex-col justify-center items-center'> 
+                    <img src={Upload} alt="" className='h-20 w-20'/>
+                      <p>Upload a File</p>
+                      <p>Drag and drop files here</p>
+                </div>
                           
-                      </div>       
-
-
-                      <div className='flex flex-col pt-7'>
-                          <div className="">
-                              <input
-                              type="text"
-                              value={middleName}
-                              onChange={handleMiddleNameChange}
-                              className='w-full'
-                              
-                              />
-                              <label className='flex'>Middle Name</label>
-                          </div>
-                      </div>
-                      <div  className="flex flex-col pt-7">
-                          <div>
-                              <input
-                              type="text"
-                              value={lastName}
-                              onChange={handleLastNameChange}
-                              className='w-full'
-                              />
-                              <label className='flex'>Last Name</label>
-                          </div>
-                      </div>
-
-                      <div className='flex flex-col pt-7'>
-                          
-                              <input
-                              type="text"
-                              value={suffix}
-                              onChange={handleSuffixChange}
-                              className='w-full'
-                              />
-                              <label className='flex'>Suffix</label>
-                                
-                      </div>
-
-                      <div className="flex flex-col ">
-                              <label htmlFor="birthdate" className='font-bold text-lg'>Birthdate</label>
-                              <input
-                              type="date"
-                              id='birthdate'
-                              value={birthdate}
-                              onChange={handleBirthdateChange}
-                              className="w-full" // Adjust the width for birthdate
-                              />
-                              <label className="flex">MM/DD/YYYY</label>
-                          
-                      </div>
-
-
-                      <div className="flex flex-col pb-6">
-                          <label htmlFor="age" className='font-bold text-lg'>Age</label>
-                          <input
-                          type="text"
-                          id='age'
-                          value={age}
-                          onChange={handleAgeChange}
-                          className='w-full'
-                          />
-                      </div>
-
-                      <div  className="flex flex-col md:pb-6">
-                              <label htmlFor="nationality" className='font-bold text-lg'>Nationality</label>
-                              <input
-                              type="text"
-                              id='nationality'
-                              value={nationality}
-                              onChange={handleNationalityChange}
-                              className='w-full'
-                              />
-                              
-                          
-                      </div>
-
-                      <div className='flex flex-col'>
-                              <label htmlFor="phonenumber" className='font-bold text-lg'>Phone Number</label>
-                                  <input
-                                  type="text"
-                                  id='phonenumber'
-                                  value={phoneNumber}
-                                  onChange={handlePhoneNumberChange}
-                                  className='w-full'
-                                  />
-                              <label className='flex'>(Area Code) XXX-XX-XX</label>
-                          
-                      </div>
-
-                      <div className="flex flex-col lg:pb-6">
-                          <label htmlFor="email" className='font-bold text-lg'>Email Address</label>
-                          <input
-                              type="email"
-                              id='email'
-                              value={email}
-                              onChange={handleEmailChange}
-                              className='w-full'
-                          />
-                          <label className='flex'>example@test.com</label>
-                          
-                      </div>
-
-                      <div className="flex flex-col">
-                          <label htmlFor="license" className='font-bold text-lg'>Driver License No</label>
-                          <input
-                              type="text"
-                              id='license'
-                              value={driverLicenseNumber}
-                              onChange={handleDriverLicenseNumberChange}
-                              className='w-full'
-                          />
-                          <label className='flex'>*Located the number on your Driver's License ID.</label>
-                          
-                      </div>
-                  </div>
-                  
-                  <div> {/* Start Upload FIle */}
-                      <div>
-                          <h2 className='pt-5 font-bold text-lg'>Upload Driver's License ID Photo</h2>
-                      </div>
-                      <div className='border border-primary'>
-                          <div className='flex flex-col justify-center items-center'> 
-                              <img src={Upload} alt="" className='h-20 w-20'/>
-                              <p>Upload a File</p>
-                              <p>Drag and drop files here</p>
-                          </div>
-                          
-                      </div>
-
-                      <div className='flex py-5'>
-                      <button><FaPlus className="mr-2" /></button>
-                          <div>
-                              <h2>
-                                  Add Another Driver 
-                              </h2>
-                          </div>
-                          
-                      </div>
+              </div>
                       
-                  </div> {/* End Upload FIle */}
+            </div> {/* End Upload FIle */}
+              </div>
+            )}
 
-                  <h3 className='font-bold text-2xl pb-4'>Driver 2</h3>
-                  <div className="px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 ">
-
-                      <div className="flex flex-col justify-center">
-                          <label htmlFor="" className='font-bold text-lg'>Full Name</label>
-                          <input
-                          type="text"
-                          value={firstName}
-                          placeholder='FirstName'
-                          onChange={handleFirstNameChange}
-                          />
-                          <label htmlFor="" className='text-red-500'>Firstname is required</label>
-                         
-                          
-                      </div>       
-
-
-                      <div className='flex flex-col pt-7'>
-                          
-                              <input
-                              type="text"
-                              value={middleName}
-                              onChange={handleMiddleNameChange}
-                              className='w-full'
-                              
-                              />
-                              <label className='flex'>Middle Name</label>
-                          
-                      </div>
-                      <div  className="flex flex-col pt-7">
-                          
-                              <input
-                              type="text"
-                              value={lastName}
-                              onChange={handleLastNameChange}
-                              className='w-full'
-                              />
-                              <label className='flex'>Last Name</label>
-                          
-                      </div>
-
-                      <div className='flex flex-col pt-7'>
-                          
-                              <input
-                              type="text"
-                              value={suffix}
-                              onChange={handleSuffixChange}
-                              className='w-full'
-                              />
-                              <label className='flex'>Suffix</label>
-                                  
-                      </div>
-
-                      <div className="flex flex-col ">
-                              <label htmlFor="birthdate" className='font-bold text-lg'>Birthdate</label>
-                              <input
-                              type="date"
-                              id='birthdate'
-                              value={birthdate}
-                              onChange={handleBirthdateChange}
-                              className="w-full" // Adjust the width for birthdate
-                              />
-                              <label className="flex">MM/DD/YYYY</label>
-                          
-                      </div>
-
-
-                      <div className="flex flex-col pb-6">
-                          <label htmlFor="age" className='font-bold text-lg'>Age</label>
-                          <input
-                          type="text"
-                          id='age'
-                          value={age}
-                          onChange={handleAgeChange}
-                          className='w-full'
-                          />
-                      </div>
-
-                      <div  className="flex flex-col md:pb-6">
-                              <label htmlFor="nationality" className='font-bold text-lg'>Nationality</label>
-                              <input
-                              type="text"
-                              id='nationality'
-                              value={nationality}
-                              onChange={handleNationalityChange}
-                              className='w-full'
-                              />
-                              
-                          
-                      </div>
-
-                      <div className='flex flex-col'>
-                              <label htmlFor="phonenumber" className='font-bold text-lg'>Phone Number</label>
-                                  <input
-                                  type="text"
-                                  id='phonenumber'
-                                  value={phoneNumber}
-                                  onChange={handlePhoneNumberChange}
-                                  className='w-full'
-                                  />
-                              <label className='flex'>(Area Code) XXX-XX-XX</label>
-                          
-                      </div>
-
-                      <div className="flex flex-col lg:pb-6">
-                          <label htmlFor="email" className='font-bold text-lg'>Email Address</label>
-                          <input
-                              type="email"
-                              id='email'
-                              value={email}
-                              onChange={handleEmailChange}
-                              className='w-full'
-                          />
-                          <label className='flex'>example@test.com</label>
-                          
-                      </div>
-
-                      <div className="flex flex-col">
-                          <label htmlFor="license" className='font-bold text-lg'>Driver License No</label>
-                          <input
-                              type="text"
-                              id='license'
-                              value={driverLicenseNumber}
-                              onChange={handleDriverLicenseNumberChange}
-                              className='w-full'
-                          />
-                          <label className='flex'>*Located the number on your Driver's License ID.</label>
-                          
-                      </div>
-                  </div>
-                  
-                  <div> {/* Start Upload FIle */}
-                      <div>
-                          <h2 className='pt-5 font-bold text-lg'>Upload Driver's License ID Photo</h2>
-                      </div>
-                      <div className='border border-primary'>
-                          <div className='flex flex-col justify-center items-center'> 
-                              <img src={Upload} alt="" className='h-20 w-20'/>
-                              <p>Upload a File</p>
-                              <p>Drag and drop files here</p>
-                          </div>
-                          
-                      </div>
-
-                      <div className='flex py-5'>
-                      <button><FaPlus className="mr-2" /></button>
-                          <div>
-                              <h2>
-                                  Add Another Driver 
-                              </h2>
-                          </div>
-                          
-                      </div>
-                      
-                  </div> {/* End Upload FIle */}
-              </div> 
-            </form>
+           
+          </form>
           </div>
 
           <div className='border border-card bg-light h-max rounded-2xl'>  
@@ -558,7 +388,10 @@ export const Driver = () => {
             
           </div>
         </div>
-      </div>
+      </div> {/* end */} 
+      
+
+      
     </div>
   );
 };
