@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import Logo from "../assets/navbar-logo-light.png";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const Header = () => {
   const [dropdownCarsVisible, setDropdownCarsVisible] = useState(false);
@@ -20,7 +20,10 @@ export const Header = () => {
   };
 
   return (
-    <nav id="navbar" className="fixed w-full z-50 bg-white border-light border-b-2 dark:bg-gray-900 dark:border-gray-700">
+    <nav
+      id="navbar"
+      className="fixed w-full z-50 bg-white border-light border-b-2 dark:bg-gray-900 dark:border-gray-700"
+    >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center">
           <img src={Logo} className="h-8 mr-3" alt="Cargo Logo" />
@@ -34,7 +37,11 @@ export const Header = () => {
         >
           <span className="sr-only">Open main menu</span>
           <svg
-            className={`w-6 h-6 transition-transform ${dropdownCarsVisible || dropdownServicesVisible ? 'transform rotate-180' : ''}`}
+            className={`w-6 h-6 transition-transform ${
+              dropdownCarsVisible || dropdownServicesVisible
+                ? "transform rotate-180"
+                : ""
+            }`}
             aria-hidden="true"
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -68,7 +75,9 @@ export const Header = () => {
               >
                 Cars
                 <svg
-                  className={`w-5 h-5 ml-1 ${dropdownCarsVisible ? 'transform rotate-180' : ''}`}
+                  className={`w-5 h-5 ml-1 ${
+                    dropdownCarsVisible ? "transform rotate-180" : ""
+                  }`}
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -84,7 +93,11 @@ export const Header = () => {
               {/* <!-- Dropdown menu --> */}
               <div
                 id="dropdownCars"
-                className={`z-10 ${dropdownCarsVisible ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-300 ease-in-out font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                className={`z-10 ${
+                  dropdownCarsVisible
+                    ? "visible opacity-100"
+                    : "invisible opacity-0"
+                } transition-opacity duration-300 ease-in-out font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
@@ -110,11 +123,36 @@ export const Header = () => {
                   </li>
                   <li>
                     <NavLink
-                      to="bride"
+                      to="Bridal"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={closeDropdowns}
                     >
-                      Bride
+                      Bridal
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="family"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Family
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="casual"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Casual
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="pickup"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      onClick={closeDropdowns}
+                    >
+                      Pick-up
                     </NavLink>
                   </li>
                 </ul>
@@ -147,7 +185,9 @@ export const Header = () => {
               >
                 Services
                 <svg
-                  className={`w-5 h-5 ml-1 ${dropdownServicesVisible ? 'transform rotate-180' : ''}`}
+                  className={`w-5 h-5 ml-1 ${
+                    dropdownServicesVisible ? "transform rotate-180" : ""
+                  }`}
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -163,7 +203,11 @@ export const Header = () => {
               {/* <!-- Dropdown menu --> */}
               <div
                 id="dropdownServices"
-                className={`z-10 ${dropdownServicesVisible ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-300 ease-in-out font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                className={`z-10 ${
+                  dropdownServicesVisible
+                    ? "visible opacity-100"
+                    : "invisible opacity-0"
+                } transition-opacity duration-300 ease-in-out font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
