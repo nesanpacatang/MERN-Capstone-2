@@ -7,14 +7,14 @@ export const SignIn = () => {
             <div>
                 <h2 className="text-5xl pb-5">Sign In</h2>
             </div>
-            <form action="" className='w-full container1'>
+            <form action="" className='w-full container2'>
             <div className=" mb-4">
-                <label className=" text-sm font-medium text-gray-700" for="username">Username</label>
+                <label className=" text-sm font-medium text-gray-700" for="username">Email</label>
                 <input
                     type="text"
                     id="username"
                     className="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                    placeholder="Enter your Username"
+                    placeholder="Enter your Email"
                 />
                 </div>
                 <div className=" mb-4">

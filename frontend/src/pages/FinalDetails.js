@@ -90,14 +90,17 @@ export const FinalDetails = () => {
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-red-500 max-w-xs mx-auto rounded-lg p-8">
-            <h2 className="text-white text-2xl font-bold mb-4">Error</h2>
+            <h2 className="text-white text-2xl font-bold mb-4 text-center">Error</h2>
             <p className="text-white">Please accept the Terms of Service before confirming.</p>
-            <button
-              className="bg-white text-red-500 px-4 py-2 rounded-lg mt-4 font-semibold"
-              onClick={closeModal}
-            >
-              Close
-            </button>
+            <div className="text-center">
+              <button
+                className="bg-white text-red-500 px-4 py-2 rounded-lg mt-4 font-semibold "
+                onClick={closeModal}
+              >
+                Close
+              </button>
+            </div>
+            
           </div>
         </div>
       )}

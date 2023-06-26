@@ -16,7 +16,8 @@ import {
   SignIn,
   SignUp,
   FinalDetails,
-  BookingConfirm
+  BookingConfirm,
+  PageNotFound
 } from "../pages";
 
 export const AllRoutes = () => {
@@ -39,6 +40,7 @@ export const AllRoutes = () => {
         <Route path="signup" element={<SignUp />}></Route>
         <Route path="finaldetails" element={<FinalDetails />}></Route>
         <Route path="bookingconfirm" element={<BookingConfirm />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>
   );

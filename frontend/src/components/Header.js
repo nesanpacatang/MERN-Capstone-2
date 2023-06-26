@@ -134,6 +134,7 @@ export const Header = () => {
                     <NavLink
                       to="family"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      onClick={closeDropdowns}
                     >
                       Family
                     </NavLink>
@@ -142,6 +143,7 @@ export const Header = () => {
                     <NavLink
                       to="casual"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      onClick={closeDropdowns}
                     >
                       Casual
                     </NavLink>

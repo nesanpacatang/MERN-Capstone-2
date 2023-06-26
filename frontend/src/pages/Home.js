@@ -73,7 +73,6 @@ export const Home = () => {
                     placeholder="Pick-up Branch"
                   >
                     <option disabled value="Pick-up Branch">
-                      {" "}
                       Branch
                     </option>
                     <option value="Manila">Manila</option>
@@ -208,49 +207,6 @@ export const Home = () => {
               </p>
             </div>
 
-<<<<<<< HEAD
-        {/* Pick-up Time */}
-        <div className="flex justify-center items-center rounded-lg bg-white">
-          <div className="flex flex-col justify-center">
-            <label htmlFor="pickupTime" className="pt-2 text-sm font-bold">
-              Time:
-            </label>
-            <input className="border-none rounded-lg focus:ring-0 p-0 pb-1" type="time" id="pickupTime" name="pickupTime" />
-          </div>
-        </div>
-
-        {/* Return Date */}
-        <div className="flex justify-center items-center rounded-lg bg-white ">
-          <div className="flex flex-col justify-center">
-            <label htmlFor="pickupDate" className="pt-2 text-sm font-bold">
-              Return Date:
-            </label>
-            <input className="border-none rounded-lg focus:ring-0 p-0 pb-1" type="date" id="pickupDate" name="pickupDate" />
-          </div>
-        </div>
-
-        {/* Return Time */}
-        <div className="flex justify-center items-center rounded-lg bg-white">
-          <div className="flex flex-col justify-center">
-            <label htmlFor="pickupTime" className="pt-2 text-sm font-bold">
-              Time:
-            </label>
-            <input className="border-none rounded-lg focus:ring-0 p-0 pb-1" type="time" id="pickupTime" name="pickupTime" />
-          </div>
-        </div>
-
-        {/* Selection of Car */}
-        <div className="flex justify-center items-center rounded-lg bg-white py-2">
-          <div className="relative">
-            <select className="rounded-lg pl-8 focus:ring-0 border-none" id="carType" name="carType">
-              <option disabled value="">Car Type</option>
-              <option value="Compact">Compact</option>
-              <option value="SUV">SUV</option>
-              <option value="Sedan">Sedan</option>
-            </select>
-            <div className="absolute top-2 left-1">
-              <FaCarAlt size="1.5rem" className="text-primary" />
-=======
             <div className="flex justify-center items-center gap-3 mr-12 md:mr-0">
               <div className="rounded-full bg-circle p-2">
                 <FaCheck size="2rem" className="text-check" />
@@ -258,7 +214,6 @@ export const Home = () => {
               <p className="text-2xl md:text-xl xl:text-3xl">
                 FREE Cancellation
               </p>
->>>>>>> c109d45a0c4db75d2afeb30240f7625bf7f67ab8
             </div>
           </div>
         </div>
@@ -576,7 +531,7 @@ export const Home = () => {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 96 960 960"
-                        class="w-5 text-warning"
+                        className="w-5 text-warning"
                       >
                         <path
                           fill="currentColor"

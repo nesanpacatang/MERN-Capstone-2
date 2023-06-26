@@ -1,272 +1,98 @@
-import { FaBuilding} from 'react-icons/fa';
-import Upload from "../assets/icons/upload-icon.png"
-import { useState } from 'react';
-import { NavLink,useNavigate } from 'react-router-dom';
 
-export const Driver = () => {
-  const navigate = useNavigate();
-  const [selfDrive, setSelfDrive] = useState(false);
-  const [hireDriver, setHireDriver] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-
-  const handleSelfDriveChange = () => {
-    setSelfDrive(true);
-    setHireDriver(false);
-    setIsChecked(false)
-    setFirstName("");
-    setMiddleName("");
-    setLastName("");
-    setSuffix("");
-    setBirthdate("");
-    setAge("");
-    setNationality("");
-    setPhoneNumber("");
-    setEmail("");
-    setDriverLicenseNumber("");
-    setFormErrors("");
-    setLicenseIdPhoto("");
-  };
-  
-  const handleHireDriverChange = () => {
-    setHireDriver(true);
-    setSelfDrive(false);
-    setIsChecked(false)
-  };
-  
-  
-
-  // Information
-  const [firstName, setFirstName] = useState('');
-  const [middleName, setMiddleName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [suffix, setSuffix] = useState('');
-  const [birthdate, setBirthdate] = useState('');
-  const [age, setAge] = useState('');
-  const [nationality, setNationality] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [driverLicenseNumber, setDriverLicenseNumber] = useState('');
-  const [formErrors, setFormErrors] = useState({});
-  const [licenseIdPhoto, setLicenseIdPhoto] = useState(null);
-
-  const handleFirstNameChange = (event) => {
-    setFirstName(event.target.value);
-  };
-
-  const handleMiddleNameChange = (event) => {
-    setMiddleName(event.target.value);
-  };
-
-  const handleLastNameChange = (event) => {
-    setLastName(event.target.value);
-  };
-
-  const handleSuffixChange = (event) => {
-    setSuffix(event.target.value);
-  };
-
-  const handleBirthdateChange = (event) => {
-    setBirthdate(event.target.value);
-  };
-
-  const handleAgeChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  const handleNationalityChange = (event) => {
-    setNationality(event.target.value);
-  };
-
-  const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handleDriverLicenseNumberChange = (event) => {
-    setDriverLicenseNumber(event.target.value);
-  };
-
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0]; // Get the uploaded file
-    setLicenseIdPhoto(file); // Store the uploaded file in state
-  };
-  
- 
-
-  const validateForm = () => {
-    const errors = {};
-
-    if (!firstName.trim()) {
-      errors.firstName = 'First Name is required';
-    }
-    if (!lastName.trim()) {
-      errors.lastName = 'Last Name is required';
-    }
-    if (!birthdate.trim()) {
-      errors.birthdate = 'Birthdate is required';
-    }
-    if (!age.trim()) {
-      errors.age = 'Age is required';
-    }
-    if (!nationality.trim()) {
-      errors.nationality = 'Nationality is required';
-    }
-    if (!phoneNumber.trim()) {
-      errors.phoneNumber = 'PhoneNumber is required';
-    }
-    if (!email.trim()) {
-      errors.email = 'Email is required';
-    } else{
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!emailPattern.test(email)) {
-        errors.email = 'Invalid email format';
-      }
-    }
-    if (!driverLicenseNumber.trim()) {
-      errors.driverLicenseNumber = 'Driverlicense is required';
-    } else {
-      const licenseNumberPattern = /^[A-Z0-9]{8}$/;
-
-      if (!licenseNumberPattern.test(driverLicenseNumber)) {
-        errors.driverLicenseNumber = 'Invalid Driver License Number format';
-        console.log(!licenseNumberPattern.test(driverLicenseNumber));
-      }
-    }
-
-    // Add validation rules for other fields...
-    setFormErrors(errors);
-    // Return true if the form is valid (no errors)
-    return Object.keys(errors).length === 0;
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (!hireDriver && !selfDrive) {
-      setShowModal(true);
-    } else if(selfDrive){
-      navigate("/finaldetails")
-      return;
-    } else if (validateForm()) {
-      navigate('/finaldetails');
-    } 
-  };
-
-  const handleDragOver = (event) => {
-    event.preventDefault();
-  };
-  
-  const handleDrop = (event) => {
-    event.preventDefault();
-    const file = event.dataTransfer.files[0]; // Get the dropped file
-    setLicenseIdPhoto(file); // Store the dropped file in state
-  };
-
-
-    
-
-
+export const CarDetails = () => {
   return (
     <div>
-      <div className="bg-shade py-40">
-        <div className="mx-auto md:w-11/12 rounded-lg bg-cyan-600 z-40 relative bottom-16 sm:bottom-10 px-2 lg:px-5 xl:px-5 py-5 mb-5" id="filter">
-          <form action="">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-1 justify-center items-center">
-              {/* Car specs */}
-              <div className="flex justify-center items-center rounded-lg bg-white py-2 col-span-2 lg:col-span-1">
-                <div className="relative">
-                  <select
-                    className="rounded-lg pl-8 focus:ring-0 border-none"
-                    id="location"
-                    name="location"
-                    placeholder="Pick-up Branch"
-                  >
-                    <option disabled value="">
-                      Branch
-                    </option>
-                    <option value="Manila">Manila</option>
-                    <option value="Pasay">Pasay</option>
-                    <option value="Pasig">Pasig</option>
-                    <option value="Makati">Makati</option>
-                  </select>
-                  <div className="absolute top-2 left-1">
-                    <FaBuilding size="1.5rem" className="text-primary" />
-                  </div>
+        <div className="bg-shade py-40">
+            
+            <div className="mx-auto md:w-11/12  rounded-lg bg-cyan-600 z-40 relative bottom-16 sm:bottom-10 px-2 lg:px-5 xl:px-5 py-5 mb-5" id="filter">
+            <form action="">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-1 justify-center items-center">
+                {/* Car specs */}
+                <div className="flex justify-center items-center rounded-lg bg-white py-2 col-span-2 lg:col-span-1">
+                    <div className="relative">
+                    <select
+                        className="rounded-lg pl-8 focus:ring-0 border-none"
+                        id="location"
+                        name="location"
+                        placeholder="Pick-up Branch"
+                    >
+                        <option disabled value="">
+                        Branch
+                        </option>
+                        <option value="Manila">Manila</option>
+                        <option value="Pasay">Pasay</option>
+                        <option value="Pasig">Pasig</option>
+                        <option value="Makati">Makati</option>
+                    </select>
+                    <div className="absolute top-2 left-1">
+                        <FaBuilding size="1.5rem" className="text-primary" />
+                    </div>
+                    </div>
                 </div>
-              </div>
 
-              {/* Pick-up Date */}
-              <div className="flex justify-center items-center rounded-lg bg-white">
-                <div className="flex flex-col justify-center relative">
-                  <label htmlFor="pickupDate" className="pt-2 text-sm font-bold">
-                    Pickup Date:
-                  </label>
-                  <input
-                    className="border-none rounded-lg focus:ring-0 p-0 pb-1"
-                    type="date"
-                    id="pickupDate"
-                    name="pickupDate"
-                  />
+                {/* Pick-up Date */}
+                <div className="flex justify-center items-center rounded-lg bg-white">
+                    <div className="flex flex-col justify-center relative">
+                    <label htmlFor="pickupDate" className="pt-2 text-sm font-bold">
+                        Pickup Date:
+                    </label>
+                    <input
+                        className="border-none rounded-lg focus:ring-0 p-0 pb-1"
+                        type="date"
+                        id="pickupDate"
+                        name="pickupDate"
+                    />
+                    </div>
                 </div>
-              </div>
 
-              {/* Pick-up Time */}
-              <div className="flex justify-center items-center rounded-lg bg-white">
-                <div className="flex flex-col justify-center">
-                  <label htmlFor="pickupTime" className="pt-2 text-sm font-bold">
-                    Time:
-                  </label>
-                  <input
-                    className="border-none rounded-lg focus:ring-0 p-0 pb-1"
-                    type="time"
-                    id="pickupTime"
-                    name="pickupTime"
-                  />
+                {/* Pick-up Time */}
+                <div className="flex justify-center items-center rounded-lg bg-white">
+                    <div className="flex flex-col justify-center">
+                    <label htmlFor="pickupTime" className="pt-2 text-sm font-bold">
+                        Time:
+                    </label>
+                    <input
+                        className="border-none rounded-lg focus:ring-0 p-0 pb-1"
+                        type="time"
+                        id="pickupTime"
+                        name="pickupTime"
+                    />
+                    </div>
                 </div>
-              </div>
 
-              {/* Return Date */}
-              <div className="flex justify-center items-center rounded-lg bg-white">
-                <div className="flex flex-col justify-center">
-                  <label htmlFor="returnDate" className="pt-2 text-sm font-bold">
-                    Return Date:
-                  </label>
-                  <input
-                    className="border-none rounded-lg focus:ring-0 p-0 pb-1"
-                    type="date"
-                    id="returnDate"
-                    name="returnDate"
-                  />
+                {/* Return Date */}
+                <div className="flex justify-center items-center rounded-lg bg-white">
+                    <div className="flex flex-col justify-center">
+                    <label htmlFor="returnDate" className="pt-2 text-sm font-bold">
+                        Return Date:
+                    </label>
+                    <input
+                        className="border-none rounded-lg focus:ring-0 p-0 pb-1"
+                        type="date"
+                        id="returnDate"
+                        name="returnDate"
+                    />
+                    </div>
                 </div>
-              </div>
 
-              {/* Return Time */}
-              <div className="flex justify-center items-center rounded-lg bg-white">
-                <div className="flex flex-col justify-center">
-                  <label htmlFor="returnTime" className="pt-2 text-sm font-bold">
-                    Time:
-                  </label>
-                  <input
-                    className="border-none rounded-lg focus:ring-0 p-0 pb-1"
-                    type="time"
-                    id="returnTime"
-                    name="returnTime"
-                  />
+                {/* Return Time */}
+                <div className="flex justify-center items-center rounded-lg bg-white">
+                    <div className="flex flex-col justify-center">
+                    <label htmlFor="returnTime" className="pt-2 text-sm font-bold">
+                        Time:
+                    </label>
+                    <input
+                        className="border-none rounded-lg focus:ring-0 p-0 pb-1"
+                        type="time"
+                        id="returnTime"
+                        name="returnTime"
+                    />
+                    </div>
                 </div>
-              </div>
+                </div>
+            </form>
             </div>
-          </form>
-        </div>
-        <div className="container __grid">
+            <div className="container __grid">
           <div className="bg-light px-8 rounded-2xl">
           <form action="">
             <div>
@@ -308,7 +134,7 @@ export const Driver = () => {
               <div>
                 <h2 className="text-primary text-2xl pb-4 font-bold">Information</h2>
                 <h3 className="font-bold text-2xl pb-4">Main Driver</h3>
-                <div className="px-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                <div className="px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
                   <div>
                     <label htmlFor="firstName">First Name:</label>
                     <input
@@ -455,7 +281,7 @@ export const Driver = () => {
           <h2 className="pt-5 font-bold text-lg">Upload Driver's License ID Photo</h2>
         </div>
         <div
-          className={`border ${licenseIdPhoto ? 'border-none' : 'border-primary'}`}
+          className="border border-primary"
           onDragOver={handleDragOver}
           onDrop={handleDrop}
         >
@@ -471,12 +297,12 @@ export const Driver = () => {
             )}
             <p>{licenseIdPhoto ? 'File Uploaded' : 'Upload a File'}</p>
             <p>Drag and drop files here</p>
-            <input type="file" accept="image/*" onChange={handleFileUpload} className='my-5 mx-3' />
+            <input type="file" accept="image/*" onChange={handleFileUpload} className='my-5' />
           </div>
         </div>
       </div>
       {/* End Upload File */}
-            </div>
+    </div>
               
             )}
 
@@ -533,26 +359,8 @@ export const Driver = () => {
             </form>
             
           </div>
+            </div>
         </div>
-      </div> {/* end */} 
-      {/* Modal */}
-      {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-red-500 max-w-xs mx-auto rounded-lg p-8">
-            <h2 className="text-white text-2xl font-bold mb-4">Error</h2>
-            <p className="text-white">Please choose an option.</p>
-            <button
-              className="bg-white text-red-500 px-4 py-2 rounded-lg mt-4 font-semibold"
-              onClick={closeModal}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-      
-
-      
     </div>
-  );
-};
+  )
+}
