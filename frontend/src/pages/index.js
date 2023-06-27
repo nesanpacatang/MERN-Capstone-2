@@ -1,3 +1,5 @@
+/** @format */
+
 export { About } from "./About";
 export { Business } from "./Business";
 export { Home } from "./Home";
@@ -9,9 +11,10 @@ export { Bridal } from "./Bridal";
 export { Family } from "./Family";
 export { Casual } from "./Casual";
 export { Testimonial } from "./Testimonial";
-export {Driver} from "./Driver";
+export { Driver } from "./Driver";
 export { SignIn } from "./SignIn";
-export {SignUp} from "./SignUp";
-export {FinalDetails} from "./FinalDetails"
-export {BookingConfirm} from "./BookingConfirm"
-export {PageNotFound} from "./PageNotFound"
+export { SignUp } from "./SignUp";
+export { FinalDetails } from "./FinalDetails";
+export { BookingConfirm } from "./BookingConfirm";
+export { Branches } from "./Branches";
+export { PageNotFound } from "./PageNotFound";

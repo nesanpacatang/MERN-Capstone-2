@@ -13,16 +13,21 @@ export const Family = () => {
         <h2 className="text-3xl font-bold text-center mb-10">Family Cars</h2>
       </div>
       <div className="container">
-        <div className="grid gap-5 justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <div className="static border rounded-lg w-96 inline-block">
+        <div className="grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+          {/* 1st card 1st row */}
+          <div className=" border rounded-lg grid  bg-card">
+            <div className="h-56 overflow-hidden ">
             <img
               src={ford}
-              className="rounded-lg object-fill"
+              className="rounded-lg h-full w-full object-cover"
               alt="Toyota Avanza"
             />
 
-            <div className="grid bg-card">
-              <h3 className="text-4xl px-10 font-semibold py-5">
+            </div>
+
+            <div className="grid ">
+              <h3 className="text-4xl px-5 text-left font-semibold py-5">
                 Ford Ecosport
               </h3>
               <ul className="list-none flex justify-around gap-5 mt-3">
@@ -47,7 +52,7 @@ export const Family = () => {
                   <span className="mx-2">Automatic</span>
                 </li>
               </ul>
-              <div className="grid grid-cols-2">
+              <div className="flex justify-center">
                 <div className="text-center p-5">
                   <p className="font-semibold">Php 4,500 / Day</p>
                 </div>
@@ -58,16 +63,22 @@ export const Family = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="static border rounded-lg w-96 inline-block">
+          </div> {/* 1st card 1st row */}
+          
+          {/* 2nd card 1st row */}
+          <div className=" border bg-shade rounded-lg grid">
+            <div className="h-56 overflow-hidden">
+
             <img
               src={foton}
-              className="rounded-lg object-fill"
+              className="rounded-lg w-full h-full object-cover"
               alt="Toyota Avanza"
+             
             />
+            </div>
 
-            <div className="grid bg-card">
-              <h3 className="text-4xl px-10 font-semibold py-5">
+            <div className="grid">
+              <h3 className="text-4xl text-center font-semibold py-5">
                 Foton Transvan
               </h3>
               <ul className="list-none flex justify-around gap-5 mt-3">
@@ -104,14 +115,20 @@ export const Family = () => {
               </div>
             </div>
           </div>
-          <div className="static border rounded-lg w-96 inline-block">
+
+          {/* 3rd card 1st row */}
+          <div className="grid bg-card border rounded-lg ">
+            <div className="h-56 overflow-hidden">
             <img
               src={nissan}
-              className="rounded-lg object-fill"
+              className="rounded-lg h-full w-full object-cover"
               alt="Toyota Avanza"
             />
 
-            <div className="grid bg-card">
+            </div>
+
+            
+            <div className="grid ">
               <h3 className="text-4xl px-10 font-semibold py-5">Nissan</h3>
               <ul className="list-none flex justify-around gap-5 mt-3">
                 <li className="flex">

@@ -7,7 +7,7 @@ export const SignIn = () => {
             <div>
                 <h2 className="text-5xl pb-5">Sign In</h2>
             </div>
-            <form action="" className='w-full container2'>
+            <form action="" className='w-full __container2'>
             <div className=" mb-4">
                 <label className=" text-sm font-medium text-gray-700" for="username">Email</label>
                 <input

@@ -17,6 +17,7 @@ import {
   SignUp,
   FinalDetails,
   BookingConfirm,
+  Branches,
   PageNotFound
 } from "../pages";
 
@@ -40,6 +41,7 @@ export const AllRoutes = () => {
         <Route path="signup" element={<SignUp />}></Route>
         <Route path="finaldetails" element={<FinalDetails />}></Route>
         <Route path="bookingconfirm" element={<BookingConfirm />}></Route>
+        <Route path="branches" element={<Branches />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>
