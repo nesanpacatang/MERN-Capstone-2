@@ -61,7 +61,7 @@ export const Home = () => {
           id="filter"
           className=" mx-auto md:w-11/12 lg:w-max   rounded-lg bg-primary z-40 relative bottom-16 sm:bottom-10 px-5 lg:px-1 xl:px-5 py-5"
         >
-          <form action="">
+          <form action="/reservation">
             <div className="grid grid-cols-1 lg:grid-cols-7 gap-1 justify-center items-center">
               {/* Pick-up Branch  */}
               <div className="flex justify-center items-center rounded-lg bg-white py-2 col-span-2 lg:col-span-1">
@@ -169,9 +169,12 @@ export const Home = () => {
                     <option disabled defaultValue>
                       Car Type
                     </option>
-                    <option value="Compact">Compact</option>
-                    <option value="SUV">SUV</option>
-                    <option value="Sedan">Sedan</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Business">Business</option>
+                    <option value="Family">Family</option>
+                    <option value="Bridal">Bridal</option>
+                    <option value="Pickup">Pickup</option>
+                    <option value="Casual">Casual</option>
                   </select>
                   <div className="absolute top-2 left-1">
                     <FaCarAlt size="1.5rem" className="text-primary" />
@@ -220,50 +223,52 @@ export const Home = () => {
       </div>
 
       {/* We offer section */}
-      <div className="px-2 bg-shade py-10">
-        <div className="text-center text-5xl font-bold text-cyan-600 pb-10">
-          <p>WE OFFER</p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5 justify-center items-center">
-          <div className="grid justify-center">
-            <div className="bg-white rounded-full px-14">
-              <img
-                className="rounded-lg justify-center"
-                src={maintain}
-                alt=""
-              />
-            </div>
-
-            <p className="text-center text-3xl lg:text-xl xl:text-3xl font-semibold text-cyan-600 pt-2">
-              Highly-Maintained Cars
-            </p>
+      <div className="bg-shade ">
+        <div className="container py-10">
+          <div className="text-center text-5xl font-bold text-cyan-600 pb-10">
+            <p>WE OFFER</p>
           </div>
-          <div className="grid justify-center pt-5 lg:pt-0">
-            <div className="bg-white rounded-full px-14">
-              <img
-                src={widecar}
-                alt=""
-                className="rounded-lg object-fit object-center"
-                style={{}}
-              />
-            </div>
-            <p className="text-center text-3xl lg:text-xl xl:text-3xl font-semibold text-cyan-600 pt-2">
-              Wide Variety of Cars Selection
-            </p>
-          </div>
-          <div className=" grid justify-center pt-5 lg:pt-0">
-            <div className="bg-white rounded-full px-14">
-              <img
-                src={twentyfour}
-                alt=""
-                className="rounded-lg object-fit object-center "
-                style={{}}
-              />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5 justify-center items-center">
+            <div className="grid justify-center">
+              <div className="bg-white rounded-full px-14">
+                <img
+                  className="rounded-lg justify-center"
+                  src={maintain}
+                  alt=""
+                />
+              </div>
 
-            <p className="text-center text-3xl lg:text-xl xl:text-3xl font-semibold text-cyan-600 pt-2">
-              24/7 Customer Support
-            </p>
+              <p className="text-center text-3xl lg:text-xl xl:text-3xl font-semibold text-cyan-600 pt-2">
+                Highly-Maintained Cars
+              </p>
+            </div>
+            <div className="grid justify-center pt-5 lg:pt-0">
+              <div className="bg-white rounded-full px-14">
+                <img
+                  src={widecar}
+                  alt=""
+                  className="rounded-lg object-fit object-center"
+                  style={{}}
+                />
+              </div>
+              <p className="text-center text-3xl lg:text-xl xl:text-3xl font-semibold text-cyan-600 pt-2">
+                Wide Variety of Cars Selection
+              </p>
+            </div>
+            <div className=" grid justify-center pt-5 lg:pt-0">
+              <div className="bg-white rounded-full px-14">
+                <img
+                  src={twentyfour}
+                  alt=""
+                  className="rounded-lg object-fit object-center "
+                  style={{}}
+                />
+              </div>
+
+              <p className="text-center text-3xl lg:text-xl xl:text-3xl font-semibold text-cyan-600 pt-2">
+                24/7 Customer Support
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -506,7 +511,7 @@ export const Home = () => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 96 960 960"
-                      class="inline-block w-6"
+                      className="inline-block w-6"
                     >
                       <path
                         fill="currentColor"
@@ -519,7 +524,7 @@ export const Home = () => {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 96 960 960"
-                        class="w-5 text-warning"
+                        className="w-5 text-warning"
                       >
                         <path
                           fill="currentColor"

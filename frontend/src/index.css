@@ -45,13 +45,18 @@
   padding: 0 20px;
 }
 #navbar a.active {
-  color: #3399cc;
+  color: #0097B2;
   /* display: block;
     background:#3399cc ;
     color: #fff;
         
     border-radius: 5px;
     margin: 0; */
+}
+.container-family{
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 .__grid{
@@ -65,3 +70,12 @@
   }
   
 } 
+
+@media (max-width: 1023px) and (min-width: 768px){
+  .container-family{
+    max-width: 800px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+}

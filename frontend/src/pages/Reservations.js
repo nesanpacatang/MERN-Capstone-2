@@ -168,12 +168,12 @@ export const Reservations = () => {
         <div className=" flex justify-center items-center  xl:mx-auto xl:w-max rounded-lg bg-white relative bottom-16 sm:bottom-10 px-5 mx-5 lg:px-1 xl:px-5 py-5">
           <form action="">
             <div className="grid grid-cols-1 lg:grid-cols-7 gap-3 justify-center items-center">
-            <div className="flex items-center md:col-span-7 md:col-start-3 lg:col-span-1">
-              <h2 className="text-lg font-bold flex items-center">
-                <FaFilter className="mr-2" /> {/* Assuming you want to use the FaFilter icon */}
-                <span>Filter</span>
-              </h2>
-            </div>
+              <div className="flex items-center md:col-span-7 md:col-start-3 lg:col-span-1">
+                <h2 className="text-lg font-bold flex items-center">
+                  <FaFilter className="mr-2" /> {/* Assuming you want to use the FaFilter icon */}
+                  <span>Filter</span>
+                </h2>
+              </div>
 
 
 
