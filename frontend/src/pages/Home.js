@@ -59,7 +59,7 @@ export const Home = () => {
       <div className="bg-shade">
         <div
           id="filter"
-          className=" mx-auto md:w-11/12 lg:w-max   rounded-lg bg-cyan-600 z-40 relative bottom-16 sm:bottom-10 px-5 lg:px-1 xl:px-5 py-5"
+          className=" mx-auto md:w-11/12 lg:w-max   rounded-lg bg-primary z-40 relative bottom-16 sm:bottom-10 px-5 lg:px-1 xl:px-5 py-5"
         >
           <form action="">
             <div className="grid grid-cols-1 lg:grid-cols-7 gap-1 justify-center items-center">
@@ -72,7 +72,7 @@ export const Home = () => {
                     name="location"
                     placeholder="Pick-up Branch"
                   >
-                    <option disabled value="Pick-up Branch">
+                    <option disabled  value="Pick-up Branch">
                       Branch
                     </option>
                     <option value="Manila">Manila</option>
@@ -166,7 +166,7 @@ export const Home = () => {
                     id="carType"
                     name="carType"
                   >
-                    <option disabled selected value="">
+                    <option disabled defaultValue>
                       Car Type
                     </option>
                     <option value="Compact">Compact</option>
