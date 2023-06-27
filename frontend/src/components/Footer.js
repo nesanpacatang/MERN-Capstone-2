@@ -64,14 +64,14 @@ export const Footer = () => {
           </div>
           <div className="col-span-1">
             <div className="text-center font-semibold">
-              <h2 className="text-3xl pb-5 text-cyan-600">Didn't Join Yet?</h2>
+              <h2 className="text-3xl pb-5 text-primary">Didn't Join Yet?</h2>
               <p className="  py-3 dark:text-color-white">
                 Let's have a a smooth ride with CarGo rent a Car!
               </p>
               <div className="pt-10">
                 <a
                   href="contact.html"
-                  className="py-3 px-3 bg-red-600 rounded-lg border-none text-white hover:text-cyan-600"
+                  className="py-3 px-3 bg-red-600 rounded-lg border-none text-white hover:text-primary"
                 >
                   Join Our Community
                 </a>
